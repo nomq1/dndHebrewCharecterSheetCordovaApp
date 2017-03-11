@@ -8,7 +8,7 @@ import { NavController } from 'ionic-angular';
 })
 export class Attack {
   NKPSum:number;
-  mystorage:Storage;
+  mystorage:Storage
   constructor(public navCtrl: NavController , storage: Storage)
   {
     this.NKPSum = -99;

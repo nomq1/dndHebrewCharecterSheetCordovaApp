@@ -4,63 +4,59 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
+<ion-content paddingtext-right item-right right>
 
-    <ion-card-content text-right item-right right>
-      <ion-grid>
-        <h1>נק"פ</h1>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label floating>סה"כ</ion-label>
-              <ion-input type="number" value=""></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label floating>הפחתת נזק</ion-label>
-              <ion-input type="number" value=""></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label floating>נק"פ נוכחי ופציעות</ion-label>
-              <ion-input type="number" value=""></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label floating>נזק לא קטלני</ion-label>
-              <ion-input type="number" value=""></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <h1>יוזמה</h1>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-            <ion-label fixed>סה"כ</ion-label>
-            <ion-input type="number" value=""></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col width-10> = </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label fixed>מתאם זריזות</ion-label>
-              <ion-input type="number" value=""></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col width-10> + </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label fixed>נק"פ נוכחי ופציעות</ion-label>
-              <ion-input type="number" value=""></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
+  <ion-grid>
+    <h1>נק"פ</h1>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>סה"כ</ion-label>
+          <ion-input name="NKPSum" type="number" value="{{NKPSum}}" [(ngModel)]="NKPSum" (keyup)="onKey($event)"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>הפחתת נזק</ion-label>
+          <ion-input type="number" value=""></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>נק"פ נוכחי ופציעות</ion-label>
+          <ion-input type="number" value=""></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>נזק לא קטלני</ion-label>
+          <ion-input type="number" value=""></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <h1>יוזמה</h1>
+    <ion-row>
+      <ion-col width-25>
+        <ion-item>
+          <ion-label fixed>סה"כ</ion-label>
+          <ion-input type="number" value=""></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col text-center width-5> =</ion-col>
+      <ion-col width-25>
+        <ion-item>
+          <ion-label fixed>מתאם זריזות</ion-label>
+          <ion-input type="number" value=""></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col text-center width-5>+</ion-col>
+      <ion-col width-25>
+        <ion-item>
+          <ion-label fixed>נק"פ נוכחי ופציעות</ion-label>
+          <ion-input type="number" value=""></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  </ion-card>
 </ion-content>
