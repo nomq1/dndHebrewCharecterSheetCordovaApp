@@ -8,51 +8,51 @@ import {NavController} from 'ionic-angular';
 })
 export class Attack {
   NKPSum: number;
-  NKPDR: number;
-  NKPCurrent: number;
-  NKPNonLethal: number;
-  InitiativeSum: number;
-  InitiativeDex: number;
-  InitiativeMisc: number;
-  FortitudeSum: number;
-  FortitudeBase: number;
-  FortitudeAbility: number;
-  FortitudeMagic: number;
-  FortitudeMisc: number;
-  FortitudeTemp: number;
-  ReflaxBase: number;
-  ReflaxAbility: number;
-  ReflaxMagic: number;
-  ReflaxMisc: number;
-  ReflaxTemp: number;
+  private NKPDR: number;
+  private NKPCurrent: number;
+  private NKPNonLethal: number;
+  private InitiativeSum: number;
+  private InitiativeDex: number;
+  private InitiativeMisc: number;
+  private FortitudeSum: number;
+  private FortitudeBase: number;
+  private FortitudeAbility: number;
+  private FortitudeMagic: number;
+  private FortitudeMisc: number;
+  private FortitudeTemp: number;
+  private ReflaxBase: number;
+  private ReflaxAbility: number;
+  private ReflaxMagic: number;
+  private ReflaxMisc: number;
+  private ReflaxTemp: number;
 
-  willBase: number;
-  willAbility: number;
-  willMagic: number;
-  willMisc: number;
-  willTemp: number;
+  private willBase: number;
+  private willAbility: number;
+  private willMagic: number;
+  private willMisc: number;
+  private willTemp: number;
 
-  AcArmorBonus: number;
-  AcShildBonus: number;
-  AcDexModifier: number;
-  AcSizemoidifier: number;
-  AcNaturalArmor: number;
-  AcDeflactionModifier: number;
-  AcMiscModifier: number;
+  private AcArmorBonus: number;
+  private AcShildBonus: number;
+  private AcDexModifier: number;
+  private AcSizemoidifier: number;
+  private AcNaturalArmor: number;
+  private AcDeflactionModifier: number;
+  private AcMiscModifier: number;
 
-  AcTouch: number;
-  AcFlatFooted: number;
+  private AcTouch: number;
+  private AcFlatFooted: number;
 
-  BaseAttackBonus: number;
-  SpellResistanse: number;
+  private BaseAttackBonus: number;
+  private SpellResistanse: number;
 
-  CMBStr: number;
-  CMBSize: number;
-  CMBMisc: number;
+  private CMBStr: number;
+  private CMBSize: number;
+  private CMBMisc: number;
 
-  CMDStr: number;
-  CMDDex: number;
-  CMDSize: number;
+  private CMDStr: number;
+  private CMDDex: number;
+  private CMDSize: number;
 
 
   mystorage: Storage;
