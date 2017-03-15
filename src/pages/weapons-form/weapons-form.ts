@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
-import {SQLite} from 'ionic-native';
+import {Storage} from '@ionic/storage';
+import {Weapon} from '../../providers/weapon';
+import {Events} from 'ionic-angular'
 /*
  Generated class for the WeaponsForm page.
 
@@ -14,9 +16,11 @@ import {SQLite} from 'ionic-native';
 })
 export class WeaponsFormPage {
   private weapForm: FormGroup;
-  mGroup;
+  private weapArr: Weapon[];
+  private storage: Storage;
+  private events: Events;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, storage: Storage, events: Events) {
     this.weapForm = this.formBuilder.group({
       name: [''],
       attackBonus: [''],
@@ -26,22 +30,37 @@ export class WeaponsFormPage {
       ammunition: [''],
       damage: ['']
     });
-    SQLite.openDatabase({
-      name: 'data.db',
-      location: 'default'
-    })
-      .then((db: SQLite) => {
-
-        db.executeSql('create table weapons(name VARCHAR(32),)', []).then(() => {
-        }).catch(() => {
-        });
-
+    storage.ready().then(() => {
+      storage.get('weaponsArr').then((val) => {
+        if (val != undefined) {
+          this.weapArr = val;
+        }
+        else {
+          this.weapArr = [];
+          storage.set("weaponsArr", this.weapArr);
+        }
       })
-      .catch(error => console.error('Error opening database', error));
+    });
+    this.storage = storage;
+    this.events = events;
+
+
   }
 
   updateDataBase() {
+    let data = this.weapForm.value;
+    let weap = new Weapon(data.name, data.attackBonus, data.critical, data.type, data.range, data.ammunition, data.damage);
+    //this.storage.ready().then(
+    //  () => {
+    this.storage.get('weaponsArr').then((val) => {
+      val.push(weap);
+      this.storage.set('weaponsArr', val);
 
+    });
+    //  }
+    //);
+    //this.events.publish('reloadWep');
+    this.navCtrl.pop();
   }
 
   ionViewDidLoad() {

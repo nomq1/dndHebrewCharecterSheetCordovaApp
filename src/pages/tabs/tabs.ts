@@ -6,6 +6,7 @@ import { ContactPage } from '../contact/contact';
 import { General } from '../general/general';
 import { Attack } from '../attackAndDefence/attackAndDefence';
 //import {WeponsPage} from '../wepons/wepons';
+import {WeaponsPage} from '../weapons/weapons';
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -18,7 +19,7 @@ export class TabsPage {
   generalRoot: any = General;
   AttackRoot: any = Attack;
   //weponsRoot: any = WeponsPage;
-
+  WeaponsRoot: any = WeaponsPage;
   constructor() {
 
   }

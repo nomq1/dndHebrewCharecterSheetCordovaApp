@@ -7,13 +7,63 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>weapons</ion-title>
+    <ion-title>נשקים</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addWeapon()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item-sliding *ngFor="let w of weapArr">
+      <ion-item>
+        <ion-card>
+          <ion-card-header>
+            {{w.name}}
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  סוג: {{w.type}}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  תוסף התקפה :{{w.attackBonus}}
+                </ion-col>
+                <ion-col>
+                  קריטי :{{w.critical}}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  טווח :{{w.range}}
+                </ion-col>
+                <ion-col>
+                  תחמושת :{{w.ammunition}}
+                </ion-col>
+                <ion-col>
+                  נזק :{{w.damage}}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="delWeapon(w)">
+          <ion-icon name="close-circle"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>
