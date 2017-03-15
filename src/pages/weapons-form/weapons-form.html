@@ -1,0 +1,74 @@
+<!--
+  Generated template for the WeaponsForm page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>נשק חדש</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="weapForm" (ngSubmit)="updateDataBase()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>שם</ion-label>
+            <ion-input formControlName="name" type="string"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>בונוס התקפה</ion-label>
+            <ion-input formControlName="attackBonus" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>נזק קריטי</ion-label>
+            <ion-input formControlName="critical" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>סוג</ion-label>
+            <ion-input formControlName="type" type="string"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>טווח</ion-label>
+            <ion-input formControlName="range" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>תחמושת</ion-label>
+            <ion-input formControlName="ammunition" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>נזק</ion-label>
+            <ion-input formControlName="damage" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-buttons type="submit"></ion-buttons>
+      </ion-row>
+
+
+    </ion-grid>
+  </form>
+</ion-content>

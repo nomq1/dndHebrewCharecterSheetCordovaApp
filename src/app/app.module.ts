@@ -6,7 +6,7 @@ import {ContactPage} from '../pages/contact/contact';
 import {TabsPage} from '../pages/tabs/tabs';
 import {General} from '../pages/general/general';
 import {Attack} from '../pages/attackAndDefence/attackAndDefence';
-import {WeponsPage} from '../pages/wepons/wepons';
+//import {WeponsPage} from '../pages/wepons/wepons';
 import {Storage} from '@ionic/storage';
 
 
@@ -18,7 +18,7 @@ import {Storage} from '@ionic/storage';
     Attack,
     TabsPage,
     General,
-    WeponsPage
+    //WeponsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -31,7 +31,7 @@ import {Storage} from '@ionic/storage';
     Attack,
     TabsPage,
     General,
-    WeponsPage
+    //WeponsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Storage]
 })
