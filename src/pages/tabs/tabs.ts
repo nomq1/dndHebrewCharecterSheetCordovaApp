@@ -5,8 +5,9 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { General } from '../general/general';
 import { Attack } from '../attackAndDefence/attackAndDefence';
-//import {WeponsPage} from '../wepons/wepons';
 import {WeaponsPage} from '../weapons/weapons';
+import {SpellsPage} from '../spells/spells';
+import {QualitysPage} from '../qualitys/qualitys';
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -18,8 +19,9 @@ export class TabsPage {
   tab3Root: any = ContactPage;
   generalRoot: any = General;
   AttackRoot: any = Attack;
-  //weponsRoot: any = WeponsPage;
   WeaponsRoot: any = WeaponsPage;
+  SpellsRoot: any = SpellsPage;
+  QualitysRoot: any = QualitysPage;
   constructor() {
 
   }

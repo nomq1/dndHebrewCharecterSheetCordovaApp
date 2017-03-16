@@ -13,19 +13,20 @@
         <ion-col>
           <ion-item>
             <ion-label  floating>שם הדמות</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="characterName" name="characterName" value=""
+                       (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label  floating>נטייה</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="aligment" name="aligment" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label  floating>אלוהות</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="deity" name="deity" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -33,14 +34,14 @@
         <ion-col>
           <ion-item>
             <ion-label  floating>ארץ מוצא</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="homeland" name="homeland" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
 
           <ion-item>
             <ion-label  floating>דרגת הדמות</ion-label>
-            <ion-input type="number" value=""></ion-input>
+            <ion-input type="number" [(ngModel)]="rank" name="rank" (keyup)="onKey($event)"></ion-input>
           </ion-item>
 
         </ion-col>
@@ -48,7 +49,7 @@
 
           <ion-item>
             <ion-label  floating>גזע</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="race" name="race" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
 
@@ -57,35 +58,35 @@
         <ion-col>
           <ion-item>
             <ion-label  floating>גודל</ion-label>
-            <ion-input type="number" value=""></ion-input>
+            <ion-input type="string" [(ngModel)]="size" name="size" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label  floating>מין</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="gender" name="gender" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label  floating>גיל</ion-label>
-            <ion-input type="number" value=""></ion-input>
+            <ion-input type="number" [(ngModel)]="age" name="age" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label  floating>גובה</ion-label>
-            <ion-input type="number" value=""></ion-input>
+            <ion-input type="number" [(ngModel)]="heigth" name="heigth" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label  floating>משקל</ion-label>
-            <ion-input type="number" value=""></ion-input>
+            <ion-input type="number" [(ngModel)]="weigth" name="weigth" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -94,19 +95,27 @@
         <ion-col>
           <ion-item>
             <ion-label  floating>שיער</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="hair" name="hair" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col>
           <ion-item>
             <ion-label  floating>עיניים</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" [(ngModel)]="eyes" name="eyes" (keyup)="onKey($event)"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
-
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>נק ניסיון</ion-label>
+            <ion-input type="number" [(ngModel)]="exp" name="exp" (keyup)="onKey($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
     </ion-list>
+
   </ion-grid>
 
 </ion-content>

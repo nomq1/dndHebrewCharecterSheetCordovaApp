@@ -63,7 +63,7 @@ export class Attack {
       // Or to get a key/value pair
       storage.get('NKPDR').then((val) => {
         this.NKPDR = val;
-      })
+      });
       storage.get('NKPCurrent').then((val) => {
         this.NKPCurrent = val;
       })

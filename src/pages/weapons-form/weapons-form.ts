@@ -28,13 +28,13 @@ export class WeaponsFormPage {
     }
 
     this.weapForm = this.formBuilder.group({
-      name: [''],
-      attackBonus: [''],
-      critical: [''],
-      type: [''],
-      range: [''],
-      ammunition: [''],
-      damage: ['']
+      name: [this.weapon.name],
+      attackBonus: [this.weapon.attackBonus],
+      critical: [this.weapon.critical],
+      type: [this.weapon.type],
+      range: [this.weapon.range],
+      ammunition: [this.weapon.ammunition],
+      damage: [this.weapon.damage]
     });
 
     storage.ready().then(() => {
