@@ -59,8 +59,11 @@
         </ion-card>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="danger" icon-only (click)="delWeapon(w)">
+        <button ion-button color="danger" (click)="delWeapon(w)">
           <ion-icon name="close-circle"></ion-icon>
+        </button>
+        <button ion-button color="primary" (click)="editWeapon(w)">
+          <ion-icon name="build"></ion-icon>
         </button>
       </ion-item-options>
     </ion-item-sliding>

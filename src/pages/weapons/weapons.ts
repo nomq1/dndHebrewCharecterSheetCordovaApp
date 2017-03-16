@@ -36,10 +36,7 @@ export class WeaponsPage {
 
     this.storage = storage;
     this.events = events;
-    this.events.subscribe('reloadWep', () => {
-      this.navCtrl.pop();
-      this.navCtrl.push(WeaponsPage);
-    });
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad WeaponsPage');
@@ -61,8 +58,17 @@ export class WeaponsPage {
     this.navCtrl.push(WeaponsFormPage);
   }
 
+  editWeapon(weapon: Weapon) {
+    this.navCtrl.push(WeaponsFormPage, {
+      editedWeapon: weapon,
+      weaponIndex: this.weapArr.indexOf(weapon)
+    });
+
+
+  }
+
   delWeapon(Weap: Weapon) {
-    let index = this.weapArr.indexOf(Weap);
+    let index = this.weapArr.indexOf(Weap);//no threads in this app so its ok like that
     if (index > -1) {
       this.weapArr.splice(index, 1);
       this.storage.set("weaponsArr", this.weapArr);

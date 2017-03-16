@@ -20,7 +20,7 @@
         <ion-col>
           <ion-item>
             <ion-label floating>שם</ion-label>
-            <ion-input formControlName="name" type="string"></ion-input>
+            <ion-input formControlName="name" type="string" value="{{weapon.name}}"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -28,19 +28,19 @@
         <ion-col>
           <ion-item>
             <ion-label floating>בונוס התקפה</ion-label>
-            <ion-input formControlName="attackBonus" type="number"></ion-input>
+            <ion-input formControlName="attackBonus" type="number" value="{{weapon.attackBonus}}"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label floating>נזק קריטי</ion-label>
-            <ion-input formControlName="critical" type="number"></ion-input>
+            <ion-input formControlName="critical" type="number" value="{{weapon.critical}}"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label floating>סוג</ion-label>
-            <ion-input formControlName="type" type="string"></ion-input>
+            <ion-input formControlName="type" type="string" value="{{weapon.type}}"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -48,24 +48,24 @@
         <ion-col>
           <ion-item>
             <ion-label floating>טווח</ion-label>
-            <ion-input formControlName="range" type="number"></ion-input>
+            <ion-input formControlName="range" type="number" value="{{weapon.range}}"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label floating>תחמושת</ion-label>
-            <ion-input formControlName="ammunition" type="number"></ion-input>
+            <ion-input formControlName="ammunition" type="number" value="{{weapon.ammunition}}"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label floating>נזק</ion-label>
-            <ion-input formControlName="damage" type="number"></ion-input>
+            <ion-input formControlName="damage" type="number" value="{{weapon.damage}}"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row>
-        <button ion-button type="submit"></button>
+        <button ion-button type="submit">הוסף</button>
       </ion-row>
 
 

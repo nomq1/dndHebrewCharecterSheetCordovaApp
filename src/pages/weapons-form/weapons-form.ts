@@ -19,8 +19,14 @@ export class WeaponsFormPage {
   private weapArr: Weapon[];
   private storage: Storage;
   private events: Events;
-
+  private weapon: Weapon;
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, storage: Storage, events: Events) {
+    let weapon = navParams.get('editedWeapon');
+    this.weapon = weapon;
+    if (weapon == undefined) {
+      this.weapon = new Weapon("", 0, 0, "", 0, 0, 0);
+    }
+
     this.weapForm = this.formBuilder.group({
       name: [''],
       attackBonus: [''],
@@ -30,6 +36,7 @@ export class WeaponsFormPage {
       ammunition: [''],
       damage: ['']
     });
+
     storage.ready().then(() => {
       storage.get('weaponsArr').then((val) => {
         if (val != undefined) {
@@ -50,16 +57,18 @@ export class WeaponsFormPage {
   updateDataBase() {
     let data = this.weapForm.value;
     let weap = new Weapon(data.name, data.attackBonus, data.critical, data.type, data.range, data.ammunition, data.damage);
-    //this.storage.ready().then(
-    //  () => {
-    this.storage.get('weaponsArr').then((val) => {
-      val.push(weap);
-      this.storage.set('weaponsArr', val);
+    if (this.navParams.get('weaponIndex') != undefined) {
+      this.storage.get('weaponsArr').then((val) => {
+        val[this.navParams.get('weaponIndex')] = weap;
+        this.storage.set('weaponsArr', val);
+      });
+    } else {
+      this.storage.get('weaponsArr').then((val) => {
+        val.push(weap);
+        this.storage.set('weaponsArr', val);
 
-    });
-    //  }
-    //);
-    //this.events.publish('reloadWep');
+      });
+    }
     this.navCtrl.pop();
   }
 
