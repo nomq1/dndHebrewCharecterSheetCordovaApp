@@ -24,6 +24,10 @@ export class General {
   private eyes: string;
   private rank: number;
   private exp: number;
+  private moneyP: number;
+  private moneyG: number;
+  private moneyS: number;
+  private moneyC: number;
 
   constructor(public navCtrl: NavController, storage: Storage) {
     this.storage = storage;
@@ -69,6 +73,18 @@ export class General {
         });
         storage.get("exp").then((val) => {
           this.exp = val;
+        });
+      storage.get("moneyC").then((val) => {
+        this.moneyC = val;
+      });
+      storage.get("moneyS").then((val) => {
+        this.moneyS = val;
+      });
+      storage.get("moneyG").then((val) => {
+        this.moneyG = val;
+      });
+      storage.get("moneyP").then((val) => {
+        this.moneyP = val;
         });
       }
     );

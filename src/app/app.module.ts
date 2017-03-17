@@ -1,7 +1,6 @@
 import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
-import {AboutPage} from '../pages/about/about';
 import {ContactPage} from '../pages/contact/contact';
 import {TabsPage} from '../pages/tabs/tabs';
 import {General} from '../pages/general/general';
@@ -17,7 +16,6 @@ import {Storage} from '@ionic/storage';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     ContactPage,
     Attack,
     TabsPage,
@@ -34,7 +32,6 @@ import {Storage} from '@ionic/storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     ContactPage,
     Attack,
     TabsPage,

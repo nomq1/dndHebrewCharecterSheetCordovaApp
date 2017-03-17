@@ -114,6 +114,37 @@
           </ion-item>
         </ion-col>
       </ion-row>
+      <ion-row>
+        <button ion-button color="dark" full="true">כסף</button>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>פלטינה</ion-label>
+            <ion-input type="number" [(ngModel)]="moneyP" name="moneyP" (keyup)="onKey($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>זהב</ion-label>
+            <ion-input type="number" [(ngModel)]="moneyG" name="moneyG" (keyup)="onKey($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>כסף</ion-label>
+            <ion-input type="number" [(ngModel)]="moneyS" name="moneyS" (keyup)="onKey($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>נחושת</ion-label>
+            <ion-input type="number" [(ngModel)]="moneyC" name="moneyC" (keyup)="onKey($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
     </ion-list>
 
   </ion-grid>
