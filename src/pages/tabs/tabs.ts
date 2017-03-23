@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { ContactPage } from '../contact/contact';
 import { General } from '../general/general';
 import { Attack } from '../attackAndDefence/attackAndDefence';
 import {WeaponsPage} from '../weapons/weapons';
 import {SpellsPage} from '../spells/spells';
 import {QualitysPage} from '../qualitys/qualitys';
+import {SkillsPage} from '../skills/skills';
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -17,6 +17,7 @@ export class TabsPage {
   WeaponsRoot: any = WeaponsPage;
   SpellsRoot: any = SpellsPage;
   QualitysRoot: any = QualitysPage;
+  SkillsRoot: any = SkillsPage;
   constructor() {
 
   }

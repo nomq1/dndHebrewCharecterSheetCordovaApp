@@ -10,6 +10,7 @@ import {WeaponsFormPage} from '../pages/weapons-form/weapons-form';
 import {SpellsPage} from '../pages/spells/spells';
 import {QualitysPage} from '../pages/qualitys/qualitys';
 import {SpellsFormsPage} from '../pages/spells-forms/spells-forms';
+import {SkillsPage} from '../pages/skills/skills';
 import {Storage} from '@ionic/storage';
 
 
@@ -24,7 +25,8 @@ import {Storage} from '@ionic/storage';
     WeaponsFormPage,
     SpellsPage,
     SpellsFormsPage,
-    QualitysPage
+    QualitysPage,
+    SkillsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +42,8 @@ import {Storage} from '@ionic/storage';
     WeaponsFormPage,
     SpellsPage,
     SpellsFormsPage,
-    QualitysPage
+    QualitysPage,
+    SkillsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Storage]
 })

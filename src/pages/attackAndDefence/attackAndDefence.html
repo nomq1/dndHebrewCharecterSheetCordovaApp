@@ -12,8 +12,7 @@
       <ion-col>
         <ion-item>
           <ion-label floating>סה"כ</ion-label>
-          <ion-input name="NKPSum" type="number" value="{{ 1*NKPDR + 1*NKPCurrent + 1*NKPNonLethal}}"
-                     readonly="true"></ion-input>
+          <ion-input name="NKPSum" type="number" value="{{ 1*NKPSum }}" [(ngModel)]="NKPSum"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
@@ -23,6 +22,8 @@
                      (keyup)="onKey($event)"></ion-input>
         </ion-item>
       </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col>
         <ion-item>
           <ion-label floating>נק"פ נוכחי ופציעות</ion-label>
@@ -49,20 +50,13 @@
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-label floating>מתאם זריזות</ion-label>
-          <ion-input name="InitiativeDex" type="number" value="{{InitiativeDex}}" [(ngModel)]="InitiativeDex"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
           <ion-label floating>מתאמים שונים</ion-label>
           <ion-input name="InitiativeMisc" type="number" value="{{InitiativeMisc}}" [(ngModel)]="InitiativeMisc"
                      (keyup)="onKey($event)"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
-    <button ion-button color="dark" full="true">הצלה</button>
+    <button ion-button color="dark" full="true">הצלות</button>
 
     <ion-row>
       <ion-col width-16>
@@ -73,9 +67,6 @@
       </ion-col>
       <ion-col width-14>
         הצלה בסיסית
-      </ion-col>
-      <ion-col width-14>
-        מתאם תכונה
       </ion-col>
       <ion-col width-14>
         מתאם קסום
@@ -91,7 +82,7 @@
     <ion-row nowrap>
 
       <ion-col no-padding>
-        <button ion-button color="dark" full="true">חוסן</button>
+        <button ion-button color="dark" full="true">קשיחות</button>
       </ion-col>
       <ion-col>
         <ion-item>
@@ -104,13 +95,6 @@
         <ion-item>
           <ion-label placeholder=""></ion-label>
           <ion-input name="FortitudeBase" type="number" value="{{FortitudeBase}}" [(ngModel)]="FortitudeBase"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label placeholder=""></ion-label>
-          <ion-input name="FortitudeAbility" type="number" value="{{FortitudeAbility}}" [(ngModel)]="FortitudeAbility"
                      (keyup)="onKey($event)"></ion-input>
         </ion-item>
       </ion-col>
@@ -139,7 +123,7 @@
     </ion-row>
     <ion-row nowrap>
       <ion-col no-padding>
-        <button ion-button color="dark" full="true">זריזות</button>
+        <button ion-button color="dark" full="true">תגובה</button>
       </ion-col>
       <ion-col>
         <ion-item>
@@ -152,13 +136,6 @@
         <ion-item>
           <ion-label placeholder=""></ion-label>
           <ion-input name="ReflaxBase" type="number" value="{{ReflaxBase}}" [(ngModel)]="ReflaxBase"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col width-14>
-        <ion-item>
-          <ion-label placeholder=""></ion-label>
-          <ion-input name="ReflaxAbility" type="number" value="{{ReflaxAbility}}" [(ngModel)]="ReflaxAbility"
                      (keyup)="onKey($event)"></ion-input>
         </ion-item>
       </ion-col>
@@ -187,7 +164,7 @@
     </ion-row>
     <ion-row nowrap>
       <ion-col no-padding button ion-button color="dark" full="true">
-        <button ion-button color="dark">חוכמה</button>
+        <button ion-button color="dark">רצון</button>
       </ion-col>
       <ion-col width-14>
         <ion-item>
@@ -203,13 +180,7 @@
                      (keyup)="onKey($event)"></ion-input>
         </ion-item>
       </ion-col>
-      <ion-col width-14>
-        <ion-item>
-          <ion-label placeholder=""></ion-label>
-          <ion-input name="willAbility" type="number" value="{{willAbility}}" [(ngModel)]="willAbility"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
+
       <ion-col width-14>
         <ion-item>
           <ion-label placeholder=""></ion-label>
@@ -257,13 +228,7 @@
                      (keyup)="onKey($event)"></ion-input>
         </ion-item>
       </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label floating>מתאם זריזות</ion-label>
-          <ion-input name="AcDexModifier" type="number" value="{{AcDexModifier}}" [(ngModel)]="AcDexModifier"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
+
       <ion-col>
         <ion-item>
           <ion-label floating>מתאם גודל</ion-label>
@@ -347,21 +312,7 @@
         <ion-item>
           <ion-label floating>סה"כ</ion-label>
           <ion-input readonly="true" name="CMBSum" type="number"
-                     value="{{1*CMBStr + 1*CMBSize + 1*CMBMisc + 1*BaseAttackBonus }}"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label floating>מתאם כוח</ion-label>
-          <ion-input name="CMBStr" type="number" value="{{CMBStr}}" [(ngModel)]="CMBStr"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label floating>מתאם גודל</ion-label>
-          <ion-input name="CMBSize" type="number" value="{{CMBSize}}" [(ngModel)]="CMBSize"
-                     (keyup)="onKey($event)"></ion-input>
+                     value="{{1*CMDStr + 1*CMDSize + 1*CMBMisc + 1*BaseAttackBonus }}"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
@@ -372,7 +323,7 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <button ion-button color="dark" full="true">תת"ק - תוסף תמרון קרבי</button>
+    <button ion-button color="dark" full="true">תת"ק - הגנת תמרון קרבי</button>
     <ion-row>
       <ion-col>
         <ion-item>
@@ -381,27 +332,7 @@
                      value="{{1*CMDStr + 1*CMDDex + 1*CMDSize + 1*BaseAttackBonus +10  }}"></ion-input>
         </ion-item>
       </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label floating>מתאם כוח</ion-label>
-          <ion-input name="CMDStr" type="number" value="{{CMDStr}}" [(ngModel)]="CMDStr"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label floating>מתאם זריזות</ion-label>
-          <ion-input name="CMDDex" type="number" value="{{CMDDex}}" [(ngModel)]="CMDDex"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label floating>מתאם גודל</ion-label>
-          <ion-input name="CMDSize" type="number" value="{{CMDSize}}" [(ngModel)]="CMDSize"
-                     (keyup)="onKey($event)"></ion-input>
-        </ion-item>
-      </ion-col>
+
     </ion-row>
 
 
